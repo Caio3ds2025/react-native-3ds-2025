@@ -7,7 +7,7 @@ class Aula03 extends Component {
         super(props);
         this.state = {
             backgroundColor: 'blueviolet',
-        }
+        };
     }
     changeColor = () => {
         const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -16,12 +16,12 @@ class Aula03 extends Component {
     
     render() {
 
-        
 
         return(
-            <View style={ styles.container }>
-                <TouchableOpacity style={[styles.botao, {backgroundColor: this.backgroundColor}]}
-                onPress={ this.changeColor}
+            <View style={[styles.container, {backgroundColor: this.state.backgroundColor}]}
+            >
+                <TouchableOpacity style={styles.botao}
+                onPress={this.changeColor}
                 >
                     <Text style={styles.textbotao}>Toque para trocar a cor do fundo</Text>
                 </TouchableOpacity>
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         padding: 15,
         borderRadius: 5,
+        borderWidth: 2,
     },
 
     textbotao: {
